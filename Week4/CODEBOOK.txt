@@ -1,0 +1,29 @@
+CODEBOOK
+=================
+In this small project, Only few variables are used within run_analysis.R. The first group is to store data frames that create from read.table() function. The files were separated into test and train data set so, the variable I used in the script also have train or test suffix.
+
+  * activities: Is a data frames that store full names of activies and activities id data.
+  * features: Is a data frames that store a feature names whice are used to identify the mean and standard diviation columns for later computation.
+  * SubjectTrain: Is data frame that store all of subject IDs
+  * Ytrain: Is data frame that store all activities IDs that each subjects were participated.
+  * Xtrain: Is data frame that store variables of each subject and activies recorded by Samsung device.
+  * SubjectTest: Is data frame that store all of subject IDs
+  * Ytest: Is data frame that store all activities IDs that each subjects were participated.
+  * Xtest: Is data frame that store variables of each subject and activies recorded by Samsung device.
+
+After readed all data into workspace, I combinded all data frames above into a single data frame.
+
+  * dftrain: The combinded train data set of SubjectTrain, Ytrain and Xtrain.
+  * dftest: The combinded test data set of SubjectTest, Ytest and Xtest.
+  * df <- The combinded data set of dftrain and dftest.
+
+The combined df was filtered to find only columns that related to mean and standard diviation.
+  
+  * column_needed: Is a vector of column names filtered by regular expression. 
+  * filtered_df: Is a subset of df by column_needed.
+
+Inorder to create tidy data set the name of the columns was modified and compute mean for each variable.
+  * names: This variable was used repeatedly to store modified column names in multiple step.
+  * tidy: A final data frame.
+
+The description of run_analysis.R script is in README.md and the output file is tidyDataset.txt.
